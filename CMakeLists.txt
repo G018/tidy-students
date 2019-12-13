@@ -7,6 +7,7 @@ add_clang_library(clangTidyStudentsModule
   LINK_LIBS
   clangAST
   clangASTMatchers
+  clangLex
   clangBasic
   clangTidy
   )

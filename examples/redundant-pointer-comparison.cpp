@@ -1,5 +1,5 @@
-void func(const int* in) {
-	if (in == nullptr) {
+void func(const int* ptr) {
+	if (ptr == nullptr) {
 		// Do something
 	}
 }

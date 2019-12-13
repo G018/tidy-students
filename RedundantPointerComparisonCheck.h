@@ -9,10 +9,6 @@ namespace clang {
 namespace tidy {
 namespace students {
 
-/// FIXME: Write a short description.
-///
-/// For the user-facing documentation see:
-/// http://clang.llvm.org/extra/clang-tidy/checks/students-redundant-pointer-check.html
 class RedundantPointerComparisonCheck : public ClangTidyCheck {
 public:
   RedundantPointerComparisonCheck(StringRef Name, ClangTidyContext *Context)
@@ -25,4 +21,4 @@ public:
 } // namespace tidy
 } // namespace clang
 
-#endif // LLVM_CLANG_TOOLS_EXTRA_CLANG_TIDY_STUDENTS_REDUNDANTPOINTERCHECKCHECK_H
+#endif // LLVM_CLANG_TOOLS_EXTRA_CLANG_TIDY_STUDENTS_REDUNDANTPOINTERCOMPARISONCHECK_H
