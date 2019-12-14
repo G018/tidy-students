@@ -14,9 +14,8 @@ namespace students {
 void RedundantPointerComparisonCheck::registerMatchers(MatchFinder *Finder) {
   Finder->addMatcher(
       ifStmt(hasCondition(
-          binaryOperator(hasOperatorName("=="),
-                         hasLHS(expr(hasType(isAnyPointer())).bind("lhs")),
-                         hasRHS(ignoringImpCasts(expr(nullPointerConstant()))))
+          binaryOperator(anyOf(hasOperatorName("!="), hasOperatorName("==")),
+                         hasEitherOperand(ignoringImpCasts(expr(nullPointerConstant()))))
               .bind("comp"))),
       this);
 }
@@ -24,14 +23,7 @@ void RedundantPointerComparisonCheck::registerMatchers(MatchFinder *Finder) {
 void RedundantPointerComparisonCheck::check(
     const MatchFinder::MatchResult &Result) {
   const auto *Comp = Result.Nodes.getNodeAs<BinaryOperator>("comp");
-  const auto *LHS = Result.Nodes.getNodeAs<Expr>("lhs");
-
-  diag(Comp->getExprLoc(), "redundant nullptr comparison")
-      << FixItHint::CreateReplacement(
-             Comp->getSourceRange(),
-             Lexer::getSourceText(
-                 CharSourceRange::getTokenRange(LHS->getSourceRange()),
-                 *Result.SourceManager, Result.Context->getLangOpts()));
+  diag(Comp->getExprLoc(), "redundant nullptr comparison");
 }
 
 } // namespace students
