@@ -3,6 +3,7 @@
 #include "../ClangTidy.h"
 #include "../ClangTidyModule.h"
 #include "../ClangTidyModuleRegistry.h"
+#include "FunctionlessClassCheck.h"
 #include "RedundantPointerComparisonCheck.h"
 
 namespace clang {
@@ -12,6 +13,8 @@ namespace students {
 class StudentsModule : public ClangTidyModule {
 public:
   void addCheckFactories(ClangTidyCheckFactories &CheckFactories) override {
+    CheckFactories.registerCheck<FunctionlessClassCheck>(
+        "students-functionless-class");
     CheckFactories.registerCheck<RedundantPointerComparisonCheck>(
         "students-redundant-pointer-comparison");
   }
