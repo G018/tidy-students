@@ -65,7 +65,7 @@ static int LLVM_ATTRIBUTE_UNUSED StudentsModuleAnchorDestination =
     StudentsModuleAnchorSource;
 ```
 
-_*Note:* add them manually, to preserve alphabetic order or avoid duplication._
+_*Note:* add them manually, to preserve alphabetic order and avoid duplication._
 
 ## Building the tool
 
@@ -85,13 +85,13 @@ $ BUILD_DIR/bin/clang-tidy -checks=students-* SOURCE_FILE -- COMPILE_FLAGS
 
 For more options checkout `-help` or [clang-tidy] documentation.
 
-_*Note:* all the [clang-tidy checks] are still be available!._
+_*Note:* all the [clang-tidy checks] are still be available!_
 
 ## Contributing
 
 To add a new check to this module do the following:
  - Pick a descriptive, short and unique `#new-name#` for the check.
- - Create `#NewName#Check.h` and `NewName.cpp` based on existing checks.
+ - Create `#NewName#Check.h` and `#NewName#Check.cpp` based on existing checks.
    - Make a copy, remove the implementation, then search and replace both
      `#OldName#` with `#NewName#` and `#old-name#` with `#new-name#`.
  - Add `#NewName#.cpp` to the sources of the module in `CMakeLists.cpp`.
