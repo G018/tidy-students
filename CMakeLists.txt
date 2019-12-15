@@ -1,6 +1,7 @@
 set(LLVM_LINK_COMPONENTS support)
 
 add_clang_library(clangTidyStudentsModule
+  BadVariableNameCheck.cpp
   DoubleComparisonCheck.cpp
   FunctionlessClassCheck.cpp
   RedundantPointerComparisonCheck.cpp

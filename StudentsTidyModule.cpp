@@ -3,6 +3,7 @@
 #include "../ClangTidy.h"
 #include "../ClangTidyModule.h"
 #include "../ClangTidyModuleRegistry.h"
+#include "BadVariableNameCheck.h"
 #include "DoubleComparisonCheck.h"
 #include "FunctionlessClassCheck.h"
 #include "RedundantPointerComparisonCheck.h"
@@ -17,6 +18,8 @@ namespace students {
 class StudentsModule : public ClangTidyModule {
 public:
   void addCheckFactories(ClangTidyCheckFactories &CheckFactories) override {
+    CheckFactories.registerCheck<BadVariableNameCheck>(
+        "students-bad-variable-name");
     CheckFactories.registerCheck<DoubleComparisonCheck>(
         "students-double-comparison");
     CheckFactories.registerCheck<FunctionlessClassCheck>(
