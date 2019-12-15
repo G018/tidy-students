@@ -30,15 +30,6 @@ void by_index5(int arr[], int size) {
     }
 }
 
-void by_index7(int arr[], int size) {
-    int i = 0;
-
-    while (i < size) {
-        arr[i] += i;
-        ++i;
-    }
-}
-
 void sneaky_index(int arr[], int size) {
     int i = 0;
     for (int* ptr = arr; ptr + i < arr + size; ++i) {
