@@ -7,6 +7,7 @@
 #include "FunctionlessClassCheck.h"
 #include "RedundantPointerComparisonCheck.h"
 #include "TraversalTypeCheck.h"
+#include "UnusedInitializerListCheck.h"
 
 namespace clang {
 namespace tidy {
@@ -23,6 +24,8 @@ public:
         "students-redundant-pointer-comparison");
     CheckFactories.registerCheck<TraversalTypeCheck>(
         "students-traversal-type");
+    CheckFactories.registerCheck<UnusedInitializerListCheck>(
+        "students-unused-initializer-list");
   }
 };
 

@@ -5,6 +5,7 @@ add_clang_library(clangTidyStudentsModule
   FunctionlessClassCheck.cpp
   RedundantPointerComparisonCheck.cpp
   TraversalTypeCheck.cpp
+  UnusedInitializerListCheck.cpp
   StudentsTidyModule.cpp
 
   LINK_LIBS
