@@ -4,6 +4,7 @@ add_clang_library(clangTidyStudentsModule
   DoubleComparisonCheck.cpp
   FunctionlessClassCheck.cpp
   RedundantPointerComparisonCheck.cpp
+  TraversalTypeCheck.cpp
   StudentsTidyModule.cpp
 
   LINK_LIBS

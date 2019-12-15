@@ -6,6 +6,7 @@
 #include "DoubleComparisonCheck.h"
 #include "FunctionlessClassCheck.h"
 #include "RedundantPointerComparisonCheck.h"
+#include "TraversalTypeCheck.h"
 
 namespace clang {
 namespace tidy {
@@ -20,6 +21,8 @@ public:
         "students-functionless-class");
     CheckFactories.registerCheck<RedundantPointerComparisonCheck>(
         "students-redundant-pointer-comparison");
+    CheckFactories.registerCheck<TraversalTypeCheck>(
+        "students-traversal-type");
   }
 };
 
