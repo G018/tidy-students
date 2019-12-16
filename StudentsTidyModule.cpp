@@ -8,6 +8,7 @@
 #include "FunctionlessClassCheck.h"
 #include "RedundantPointerComparisonCheck.h"
 #include "TraversalTypeCheck.h"
+#include "UnnecessaryFunctionWrapperCheck.h"
 #include "UnnecessaryThisPointerCheck.h"
 #include "UnusedInitializerListCheck.h"
 
@@ -27,6 +28,8 @@ public:
     CheckFactories.registerCheck<RedundantPointerComparisonCheck>(
         "students-redundant-pointer-comparison");
     CheckFactories.registerCheck<TraversalTypeCheck>("students-traversal-type");
+    CheckFactories.registerCheck<UnnecessaryFunctionWrapperCheck>(
+        "students-unnecessary-function-wrapper");
     CheckFactories.registerCheck<UnnecessaryThisPointerCheck>(
         "students-unnecessary-this-pointer");
     CheckFactories.registerCheck<UnusedInitializerListCheck>(
