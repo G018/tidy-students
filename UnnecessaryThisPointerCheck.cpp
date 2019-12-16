@@ -13,7 +13,7 @@ namespace students {
 
 void UnnecessaryThisPointerCheck::registerMatchers(MatchFinder *Finder) {
   Finder->addMatcher(
-      memberExpr(hasDescendant(cxxThisExpr().bind("p"))).bind("expr"), this);
+      memberExpr(has(cxxThisExpr().bind("p"))).bind("expr"), this);
 }
 
 void UnnecessaryThisPointerCheck::check(const MatchFinder::MatchResult &Result) {
