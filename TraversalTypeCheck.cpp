@@ -113,7 +113,8 @@ void TraversalTypeCheck::check(const MatchFinder::MatchResult &Result) {
   }
 
   if (getVarDeclaration(bodyUse) == getVarDeclaration(loopIncr)) {
-    diag(Loop->getBeginLoc(), "for loop uses traversal by index");
+    diag(Loop->getBeginLoc(), "for loop uses traversal by index",
+         DiagnosticIDs::Note);
   }
 }
 
