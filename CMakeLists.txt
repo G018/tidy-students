@@ -5,6 +5,7 @@ add_clang_library(clangTidyStudentsModule
   DoubleComparisonCheck.cpp
   FunctionlessClassCheck.cpp
   RedundantPointerComparisonCheck.cpp
+  ReimplementAlgorithmCheck.cpp
   TraversalTypeCheck.cpp
   UnnecessaryFunctionWrapperCheck.cpp
   UnnecessaryThisPointerCheck.cpp
