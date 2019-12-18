@@ -7,6 +7,7 @@
 #include "DoubleComparisonCheck.h"
 #include "FunctionlessClassCheck.h"
 #include "RedundantPointerComparisonCheck.h"
+#include "ReimplementAlgorithmCheck.h"
 #include "TraversalTypeCheck.h"
 #include "UnnecessaryFunctionWrapperCheck.h"
 #include "UnnecessaryThisPointerCheck.h"
@@ -27,6 +28,8 @@ public:
         "students-functionless-class");
     CheckFactories.registerCheck<RedundantPointerComparisonCheck>(
         "students-redundant-pointer-comparison");
+    CheckFactories.registerCheck<ReimplementAlgorithmCheck>(
+        "students-reimplement-algorithm-check");
     CheckFactories.registerCheck<TraversalTypeCheck>("students-traversal-type");
     CheckFactories.registerCheck<UnnecessaryFunctionWrapperCheck>(
         "students-unnecessary-function-wrapper");
