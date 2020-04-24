@@ -1,3 +1,4 @@
+
 // bad variable name
 int Bad = 2;
 
@@ -41,18 +42,24 @@ bool wrapper(int *ptr) {
 	return not_null(ptr);
 }
 
-void by_index(int arr[], int size) {
+int by_index(int arr[], int size) {
 	// traversal by index
-    for (int i = 0; i < size; ++i) {
-        arr[i] += i;
+    int min = arr[0];
+    for (int i = 1; i < size; ++i) {
+	if (min < arr[i])
+	    min = arr[i];
     }
+    return min;
 }
 
-void by_pointer(int arr[], int size) {
+bool by_pointer(int arr[], int size) {
 	// traversal by pointer
     for (int* ptr = arr; ptr < arr + size; ++ptr) {
-        *ptr += ptr - arr;
+	if (*ptr == 3) {
+	    return true;
+	}
     }
+    return false;
 }
 
 class MyClass {
